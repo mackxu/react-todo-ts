@@ -1,15 +1,15 @@
-import { ACTION_TYPE, ITodo } from "../typings";
-
-type TState = {
-  todos: ITodo[];
-}
+import { ACTION_TYPE, ITodo, ITodosState } from "../typings";
 
 type TAction = {
-  type: string;
+  type: ACTION_TYPE;
   payload: ITodo | number | ITodo[];
-} 
+}
 
-export function todoReducer(state: TState, action: TAction): TState {
+const initTodos: ITodosState = {
+  todos: []
+}
+
+export function todoReducer(state = initTodos, action: TAction): ITodosState {
   const { type, payload } = action;
   switch (type) {
     case ACTION_TYPE.addTodo:

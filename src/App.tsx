@@ -2,10 +2,10 @@ import React, { useReducer } from 'react';
 import TodoInput from './component/TodoInput';
 import TodoList from './component/TodoList';
 import { todoReducer } from './store/reducer';
-import { ACTION_TYPE, ITodo } from './typings';
+import { ACTION_TYPE, ITodo, ITodosState } from './typings';
 import useUpdateEffect from './useUpdateEffect';
 
-function initState() {
+function initState(): ITodosState {
   return {
     todos: JSON.parse(localStorage.getItem(TODOS_STORAGE_KEY) ?? '[]')
   }

@@ -1,12 +1,8 @@
 import React from 'react'
-import { ITodo } from '../typings';
+import { ITodo, ITodoActions, ITodosState } from '../typings';
 import TodoItem from './TodoItem';
 
-type ListProps = {
-  todos: ITodo[];
-  removeTodo: (id: number) => void;
-  toggleTodo: (id: number) => void;
-}
+interface ListProps extends ITodoActions, ITodosState {}
 
 const TodoList = ({ todos, removeTodo, toggleTodo } : ListProps) => {
   return (

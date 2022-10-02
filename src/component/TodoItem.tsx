@@ -1,10 +1,8 @@
 import React from 'react'
-import { ITodo } from '../typings';
+import { ITodo, ITodoActions } from '../typings';
 
-type ItemProps = {
+interface ItemProps extends ITodoActions {
   todo: ITodo;
-  removeTodo: (id: number) => void;
-  toggleTodo: (id: number) => void;
 }
 
 const TodoItem = ({ todo, removeTodo, toggleTodo }: ItemProps) => {

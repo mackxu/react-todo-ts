@@ -4,6 +4,15 @@ export interface ITodo {
   completed: boolean;
 }
 
+export interface ITodosState {
+  readonly todos: readonly ITodo[];
+}
+
+export interface ITodoActions {
+  removeTodo: (id: number) => void;
+  toggleTodo: (id: number) => void;
+}
+
 export enum ACTION_TYPE {
   addTodo = 'add_todo',
   removeTodo = 'remove_todo',
